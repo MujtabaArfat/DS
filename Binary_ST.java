@@ -73,7 +73,7 @@ public class Binary_ST{
   if(predecessor!=null)
   {predecessor.right=delete_node.right;
   }
-
+  System.out.println("Pred is "+predecessor.val);
   return predecessor;
 }
 
@@ -91,6 +91,7 @@ private void delete_node(IntNode t, int k){
     
 
   }
+  System.out.println("Parent node is "+prev_del.val+" Deletion node is "+t.val);
    if(t.left==null && t.right!=null)
    {  if(prev_del.val>=k)
           prev_del.left=t.right;
@@ -109,9 +110,13 @@ private void delete_node(IntNode t, int k){
       
      
       if(prev_del.val>k)
-        prev_del.right=getPredecessor(t);
-      else 
+      { 
         prev_del.left=getPredecessor(t);
+      }
+      else 
+      {
+        prev_del.right=getPredecessor(t);
+      }
    }
 }
   
@@ -147,16 +152,19 @@ public void delete_node(int key){
        
        bst.inorder();
        System.out.println("BREAK");
-       
+       System.out.println("50 is deleted");
        bst.delete_node(50);
        bst.inorder();
        System.out.println("BREAK");
+       System.out.println("40 is deleted");
        bst.delete_node(40);
        bst.inorder();
        System.out.println("BREAK");
+       System.out.println("65 is deleted");
        bst.delete_node(65);
        bst.inorder();
        System.out.println("BREAK");
+       System.out.println("35 is deleted");
        bst.delete_node(35);
        bst.inorder();
        
